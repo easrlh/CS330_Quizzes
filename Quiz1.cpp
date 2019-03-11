@@ -84,13 +84,18 @@ int main() {
   v.push_back("Apple");
   v.push_back("Mango");
   v.push_back("Strawberry");
+  
+  //Also correct: v = {} (to put it simply)
 
   for (auto start = v.begin(); start < v.end(); start++) {
     const char * fruit = start -> c_str();
     unsigned long length = strlen(fruit);
     printf("\nFruit is: %s, Fruit Ptr is: %p, Fruit Length is: %lu", fruit, start.base(), length);
   }
-
+  /*
+  Also correct:
+  printf("\nFruit is: %s, Fruit Ptr is: %p, Fruit Length is: %lu", start->c_str(), start.base(), start.base()->size());
+  */
 
   //  ● Write any observations you notice from the addresses vs the length of each fruit string? 
 
@@ -107,11 +112,15 @@ int main() {
   //tutti_frutti.push_back(mango);
   //tutti_frutti.push_back(strawb);
   // ^ both of these methods work
+  
+  //Also works: tutti_fruitti.push_back(new Fruit("apple", true, 8));
 
   for (Fruit* fruit : tutti_frutti) {
     Fruit f = *fruit;
     printf("\nAt %p, the %s %s peel and has %d seeds.", fruit, f.GetName().c_str(), f.HasPeel().c_str(), f.GetSeeds());
   }
+  
+  //More correct way: not Fruit f = fruit; in printf: fruit, fruit->GetName.c_str(), fruit->HasPeel.c_str(), fruit->GetSeeds());
 
   //Write any  observations  you notice about the addresses of the  Fruit  instances as comments in your code.
 
