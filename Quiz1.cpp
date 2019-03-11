@@ -70,7 +70,8 @@ int main() {
   cout << r2 << endl;
 
   //Using  references and pointers , add the squares of i1 and i2 and place the result in sum .
-  *sum = (r1 * r1) + (r2 * r2);
+  *sum = r1 * r1 + r2 * r2;
+  //^have webpage open for reference that has order of precedence for math operators in the language you're using
 
   //Print the ‘sum of the squares’.
   cout << "Sum of Squares: " << *sum << endl;
